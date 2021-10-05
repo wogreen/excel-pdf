@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Student Result</title>
+	<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<div>
+		
+	</div>
+
+	<div id="shopping-cart">
+		<div class="txt-heading">Student Result</div>		
+		
+		<div class="txt-heading"><p>please select a registration number to view result</p></div>
+		<div class="txt-heading">
+			<form action="{{ url_for('view_result') }}" method="post">
+				<select name="reportcrd" id="reportcrd" onchange="view_result">
+					{% for key,val in result.items()
+						%}
+	  				<option value={{key}}>{{val}}</option>
+	  				{% endfor %}
+	  			</select>
+	  			<input type="submit" name="submit">
+	  		</form>
+
+ </div>	
+		
+	</div>
+
+	
+</body>
+</html>
